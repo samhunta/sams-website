@@ -21,19 +21,19 @@ export default class Footer extends Component {
     if (conf) e.preventDefault()
   }
 
-  _createBanner(img) {
-    return (
+  _createBanners(...args) {
+    return args.map((banner) => (
       <a
         href="http://areallykewlwebpage.tripod.com"
         target="blank"
         onClick={this._clickBanner}
       >
         <img
-          src={img}
+          src={banner}
           alt=""
         />
       </a>
-    )
+    ))
   }
 
   render() {
@@ -54,13 +54,15 @@ export default class Footer extends Component {
             </p>
           </div>
           <div className="site-88x31">
-            {this._createBanner(require('../../../assets/ie4.gif'))}
-            {this._createBanner(require('../../../assets/dhtml.gif'))}
-            {this._createBanner(require('../../../assets/mac.gif'))}
-            {this._createBanner(require('../../../assets/subdomains.jpg'))}
-            {this._createBanner(require('../../../assets/tripod.png'))}
-            {this._createBanner(require('../../../assets/aimlink.gif'))}
-            {this._createBanner(require('../../../assets/stat.gif'))}
+            {this._createBanners(
+              require('../../../assets/ie4.gif'),
+              require('../../../assets/dhtml.gif'),
+              require('../../../assets/mac.gif'),
+              require('../../../assets/subdomains.jpg'),
+              require('../../../assets/tripod.png'),
+              require('../../../assets/aimlink.gif'),
+              require('../../../assets/stat.gif')
+            )}
           </div>
         </div>
       </div>
