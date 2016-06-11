@@ -1,5 +1,5 @@
 /* eslint-disable no-alert */
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router'
 
 const Navigation = () => (

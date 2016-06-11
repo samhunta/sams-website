@@ -1,4 +1,3 @@
 {
-	"rootElement": "-application",
-  "theme": "default"
+	"rootElementId": "-application"
 }

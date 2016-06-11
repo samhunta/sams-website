@@ -10,7 +10,7 @@ import routes from './routes'
 
 // App config goes in `application.json`
 const {
-  rootElement,
+  rootElementId,
 } = require('../application.json')
 
 const IS_PROD_ENV = process.env.NODE_ENV === 'production'
@@ -36,8 +36,8 @@ const initialProps = {
   store,
 }
 
-// Mount application
+// Root application element
 ReactDOM.render(
   createElement(MountContainer, initialProps),
-  document.getElementById(rootElement)
+  document.getElementById(rootElementId)
 )

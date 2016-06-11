@@ -26,7 +26,7 @@ module.exports = [
   },
   {
     test: /\.(woff|woff2)$/,
-    loader: 'url?prefix=font/&limit=5000'
+    loader: 'url?prefix=font/&limit=10000'
   },
   {
     test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,

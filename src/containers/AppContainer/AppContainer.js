@@ -10,13 +10,13 @@ const AppContainer = ({ children, location }) => (
     <Header />
     <EasyTransition
       path={location.pathname}
-      initialStyle={{ opacity: 0, transform: 'scaleY(0.9) translateY(30px)' }}
+      initialStyle={{ opacity: 0, transform: 'translateY(30px)' }}
       transition="opacity 0.15s ease-in-out, transform 0.15s ease-in-out"
-      finalStyle={{ opacity: 1, transform: 'scaleY(1)' }}
+      finalStyle={{ opacity: 1, transform: 'translateY(0)' }}
     >
       {children}
+      <Footer />
     </EasyTransition>
-    <Footer />
   </div>
 )
 

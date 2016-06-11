@@ -1,5 +1,6 @@
 /* eslint-disable no-alert */
 import React, { Component } from 'react'
+import EasyTransition from 'react-easy-transition'
 
 export default class Footer extends Component {
   static propTypes = {
@@ -22,19 +23,29 @@ export default class Footer extends Component {
   }
 
   _createBanners(...args) {
-    return args.map((banner, key) => (
-      <a
-        key={key}
-        href="http://areallykewlwebpage.tripod.com"
-        target="blank"
-        onClick={this._clickBanner}
-      >
-        <img
-          src={banner}
-          alt=""
-        />
-      </a>
-    ))
+    return args.map((banner, key) => {
+      const speed = 0.05 * (key + 3)
+      return (
+        <a
+          href="http://areallykewlwebpage.tripod.com"
+          target="blank"
+          onClick={this._clickBanner}
+        >
+          <EasyTransition
+            key={key}
+            path={location.pathname}
+            initialStyle={{ opacity: 0, transform: 'translateY(40px)' }}
+            transition={`opacity ${speed}s ease-in-out, transform ${speed}s ease-in-out`}
+            finalStyle={{ opacity: 1, transform: 'translateY(0)' }}
+          >
+            <img
+              src={banner}
+              alt=""
+            />
+          </EasyTransition>
+        </a>
+      )
+    })
   }
 
   render() {

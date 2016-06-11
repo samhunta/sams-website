@@ -1,8 +1,8 @@
 /* eslint-disable */
-var webpack = require('webpack')
-var WebpackDevServer = require('webpack-dev-server')
-var config = require('./webpack.config')
-var path = require('path')
+const webpack = require('webpack')
+const WebpackDevServer = require('webpack-dev-server')
+const config = require('./webpack.config')
+const path = require('path')
 
 new WebpackDevServer(webpack(config), {
   contentBase: path.join(__dirname, 'public'),
@@ -15,5 +15,5 @@ new WebpackDevServer(webpack(config), {
   if (err) {
     return console.log(err)
   }
-  console.log('Listening at http://localhost:3000')
+  console.log('Development server listening at http://localhost:3000')
 })
