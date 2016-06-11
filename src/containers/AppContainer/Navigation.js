@@ -33,7 +33,7 @@ export default class Navigation extends Component {
             <Link to="/contact">Contact me</Link>
           </li>
           <li>
-            <a href="https://github.com/dyscrete/sams-website">Github</a>
+            <a href="https://github.com/samhunta/sams-website">Github</a>
           </li>
         </ul>
       </div>

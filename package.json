@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf ./dist/",
-    "build": "npm run clean && copyfiles -u 1 public/* dist && NODE_ENV=production webpack -p --config webpack.config.production.js",
+    "gh-pages": "NODE_PUB_PATH=/sams-website/ NODE_ENV=gh-pages npm run dist-build && gh-pages -d ./dist/",
+    "dist-build": "npm run clean && copyfiles -u 1 public/* dist && webpack -p --config webpack.config.production.js",
+    "build": "NODE_ENV=production npm run dist-build",
     "dev": "NODE_ENV=development node dev-server.js"
   },
   "author": "Samuel Hunter",
@@ -25,6 +27,7 @@
     "eslint-plugin-jsx-a11y": "^1.3.0",
     "eslint-plugin-react": "^5.1.1",
     "file-loader": "^0.8.5",
+    "gh-pages": "^0.11.0",
     "json-loader": "^0.5.4",
     "node-sass": "^3.7.0",
     "sass-loader": "^3.2.0",

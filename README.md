@@ -14,8 +14,14 @@ To start a simple development server running on port `3000` run the command:
 npm run dev
 ```
 
-To build a static site for production simply run:
+To build a static site for production:
 
 ```
 npm run build
+```
+
+Deploy to your `gh-pages` branch:
+
+```
+npm run gh-pages
 ```

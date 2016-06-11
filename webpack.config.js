@@ -3,6 +3,8 @@ var path = require('path')
 var webpack = require('webpack')
 var loaders = require('./webpack.loaders')
 
+var pubPath = process.env.NODE_PUB_PATH || "/"
+
 module.exports = {
   devtool: 'eval',
   cache: true,
@@ -12,13 +14,14 @@ module.exports = {
   ],
   plugins: [
     new webpack.EnvironmentPlugin([
-      "NODE_ENV"
+      "NODE_ENV",
+      "NODE_PUB_PATH"
     ])
   ],
   output: {
     path: path.join(__dirname, 'dist', 'assets'),
     filename: 'application.js',
-    publicPath: '/assets/'
+    publicPath: pubPath + 'assets/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
