@@ -10,10 +10,15 @@ module.exports = {
     'webpack-dev-server/client?http://localhost:3000',
     './src/index'
   ],
+  plugins: [
+    new webpack.EnvironmentPlugin([
+      "NODE_ENV"
+    ])
+  ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist', 'assets'),
     filename: 'application.js',
-    publicPath: '/public/'
+    publicPath: '/assets/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']

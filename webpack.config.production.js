@@ -7,10 +7,15 @@ module.exports = {
   entry: [
     './src/index'
   ],
+  plugins: [
+    new webpack.EnvironmentPlugin([
+      "NODE_ENV"
+    ])
+  ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist', 'assets'),
     filename: 'application.js',
-    publicPath: '/public/'
+    publicPath: process.env.PUBLIC_PATH || '/assets/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']

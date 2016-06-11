@@ -36,18 +36,8 @@ const initialProps = {
   store,
 }
 
-
 // Mount application
 ReactDOM.render(
   createElement(MountContainer, initialProps),
   document.getElementById(rootElement)
 )
-
-if (module.hot) {
-  module.hot.accept(() => {
-    ReactDOM.render(
-      createElement(MountContainer, initialProps),
-      document.getElementById(rootElement)
-    )
-  })
-}
