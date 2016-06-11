@@ -22,8 +22,9 @@ export default class Footer extends Component {
   }
 
   _createBanners(...args) {
-    return args.map((banner) => (
+    return args.map((banner, key) => (
       <a
+        key={key}
         href="http://areallykewlwebpage.tripod.com"
         target="blank"
         onClick={this._clickBanner}
